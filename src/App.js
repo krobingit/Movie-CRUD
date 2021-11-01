@@ -26,3 +26,5 @@ function Msg({ name, pic }) {
     </div>
   );
 }
+
+let variable = "Robin";
