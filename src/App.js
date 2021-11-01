@@ -1,5 +1,4 @@
 import './App.css';
-
 export default function App() {
   const names = [{
     name: "Robin",
