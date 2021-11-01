@@ -27,7 +27,7 @@ export default function App() {
     rating: "8.8",
     runtime: "2h 28min",
     genre: "Action/Sci-Fi",
-    overview: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    overview: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
     director: "Christopher Nolan",
  yor:"2010",
    cast:"Leonardo Di-Caprio, Tom Hardy, Cillian Murphy"
