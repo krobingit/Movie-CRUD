@@ -26,6 +26,5 @@ function Msg({ name, pic }) {
     </div>
   );
 }
-let sun = "rob";
-let sunn = 2;
+
 
