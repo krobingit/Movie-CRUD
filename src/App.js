@@ -27,4 +27,3 @@ function Msg({ name, pic }) {
   );
 }
 
-let variable = "Robin";
