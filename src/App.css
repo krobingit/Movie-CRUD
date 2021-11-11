@@ -33,13 +33,13 @@
     transform: rotate(360deg);
   }
 }*/
-:root{
-font-size: 10px;
+html{
+font-size:10px;
 }
-body{
+body{/*
 background:url("./wallpaper.jpg");
-background-size: cover;
-font-size: 1.8rem;
+background-size: cover;*/
+font-size: 2rem;
 }
 
 .App{
@@ -53,7 +53,7 @@ font-family: 'Poppins', sans-serif;
 font-size:4rem;
 font-variant: small-caps;
 letter-spacing: 3px;
-color:wheat;
+color: orangered;
 margin: 0;
 }
 .poster{
@@ -72,11 +72,12 @@ align-items: center;
 border-radius: 1rem;
 padding:1.5rem;
 margin: 2.5rem 2rem;
-color:beige;
+color:black;
 background: rgba( 74, 144, 226, 0 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 text-align: center;
+
 }
 .detail-container{
 margin: 0 2.5rem;
@@ -85,7 +86,7 @@ margin: 0 2.5rem;
 .movie-title{
 font-size:2.5rem;
 font-family: 'Manuale', serif;
-color: wheat;
+color: orangered;
 margin:0 0 2rem 1rem;
 text-transform: uppercase;
 font-variant: small-caps;
@@ -93,17 +94,18 @@ letter-spacing: 3px;
 }
 
 .sub-heading{
-font-size:2rem;
-color:rgb(70, 95, 206);
+font-size:2.2rem;
+color:rgb(6, 32, 87);
+font-weight: bold;
 
 }
 .rating{
 font-family: 'Manuale', serif;
 font-size:2rem;
-color:rgb(134, 145, 196)
+color:orange;
 }
 .runtime{
-color:darkgray;
+color:darkmagenta;
 font-size: 1.6rem;
 }
 .summary{
@@ -134,13 +136,78 @@ flex-direction: column;
 align-items: center;
 }
 .btn{
-font-size: 1.5rem;
-margin:1rem;
-width:10rem;
-height:3.5rem;
 border:none;
 background:#f1f1f1;
 }
+#showbtn{
+font-size: 1.6rem;
+border:1px solid;
+}
+.badge{
+font-size:2.5rem;
+margin-right:2rem;
+}
+nav{
+display: flex;
+}
+nav>*{
+margin:1rem;
+}
+.addMovie-Form,.editMovie-Form{
+display: flex;
+flex-direction: column;
+width:70%;
+margin:2rem;
+}
+.link{
+color:purple;
+text-decoration: none;
+background-color: #f1f1f1;
+border-radius:1rem;
+padding:0.5rem;
+font-weight: bold;
+height:4rem;
+display: flex;
+}
+
+.heading{
+color:black;
+}
+
+.movie-detail{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.Video{
+object-fit: cover;
+}
+.Error{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.Error img{
+object-fit: contain;
+width:80%;
+margin-top: 1.5rem;
+border:2px solid black;
+border-radius: 1rem;
+}
+.sum{
+margin:0 5rem;
+}
+.Mode{
+display: flex;
+margin-left: auto;
+}
+.Back{
+display: flex;
+}
+
+/*Media Query*/
 @media(min-width:800px)
 {
 .movie-title{
@@ -166,5 +233,8 @@ height:100%;
 .detail-container>*{
 margin:0 0 4rem 0;
 }
-
+.link{
+display: flex;
+flex-wrap:wrap;
+}
 }
