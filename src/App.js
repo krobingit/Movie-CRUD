@@ -1,7 +1,7 @@
 import './App.css';
 import { MovieList } from './MovieList';
 import { useState } from 'react';
-import { Switch, Route, Link, Redirect } from "react-router-dom";
+import { Switch, Route,Redirect } from "react-router-dom";
 import { AddMovie } from './AddMovie';
 import { MovieDetails } from './MovieDetails';
 import Button from '@mui/material/Button';
@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 export default function App() {
   const Initial_Movies = [{
@@ -88,23 +89,29 @@ export default function App() {
 
   const [movies, setMovie] = useState(Initial_Movies);
   const history = useHistory();
+  const theme = createTheme({
+  palette: {
+    mode: 'light',
+  },
+  });
+  const styles = { color:"white",marginRight:"1rem",fontSize: "1.5rem" }
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <nav className="navbar">
         <AppBar position="static" style={{marginBottom:"2.4rem"}}>
           <Toolbar style={{flexWrap:"wrap"}}>
-            <Button variant="text" style={{ color:"white",fontSize: "1.5rem" }} onClick={()=>history.push("/")} >Home</Button>
-            <Button  variant="text" style={{color:"inherit",fontSize:"1.5rem"}} onClick={()=>history.push("/movies")}>Movies</Button>
-            <Button  variant="text" style={{ color: "inherit", fontSize: "1.5rem" }} onClick={() => history.push("/add-movies")}>Add Movie</Button>
-            <Button  variant="text" style={{color:"inherit",fontSize:"1.5rem"}} onClick={()=>history.push("/tic-tac-toe")}>Tic-Tac-Toe Game</Button>
+            <Button variant="text" style={styles} onClick={()=>history.push("/")} >Home</Button>
+            <Button  variant="text" style={styles} onClick={()=>history.push("/movies")}>Movies</Button>
+            <Button  variant="text" style={styles} onClick={() => history.push("/add-movies")}>Add Movie</Button>
+            <Button  variant="text" style={styles} onClick={()=>history.push("/tic-tac-toe")}>Tic-Tac-Toe Game</Button>
             <Button style={{ margin: "2rem", fontSize: "1.5rem",color:"inherit",marginLeft:"auto" }} variant="text">Dark Mode</Button>
           </Toolbar>
         </AppBar>
 </nav>
- <div className="Back">
+
         <IconButton style={{ marginRight: "auto" }} size="small" color="secondary" onClick={() => history.goBack()}
           variant="contained"><KeyboardBackspaceIcon style={{ fontSize: "3rem" }} /></IconButton>
-      </div>
 
       <Switch>
         <Route exact path="/">
@@ -132,7 +139,8 @@ export default function App() {
           <NotFound />
         </Route>
       </Switch>
-    </div>
+      </div>
+      </ThemeProvider>
   );
 
 

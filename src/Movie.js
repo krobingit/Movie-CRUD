@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";
 import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions';
 import InfoIcon from '@mui/icons-material/Info';
 
@@ -19,11 +20,14 @@ export function Movie({ name, pic, rating, overview, runtime, genre, director, y
   const history = useHistory();
   return (
     <div className="movie-container">
+      <Card sx={{
+        maxWidth: 400
+      }}>
       <div>
         <h1 className="movie-title">{name}</h1>
-        <img className="poster" src={pic} alt={name}></img>
+          <img className="poster" src={pic} alt={name}></img>
       </div>
-      <Card>
+      <CardContent>
       <div className="detail-container">
         <div className="sub-detail">
           <p className="sub-heading rating" >IMDb Rating: ⭐ <span style={styles}>{rating}</span>/10</p>
@@ -31,14 +35,14 @@ export function Movie({ name, pic, rating, overview, runtime, genre, director, y
 
           </div>
           <div>
- <Button style={{ fontSize: "2rem", marginTop:"0", textTransform: "none",marginRight:"2rem" }}
+           <Button style={{ fontSize: "2rem", marginTop:"0", textTransform: "none",marginRight:"2rem" }}
               onClick=
               {() => {
                 history.push("/movies/" + id);
               }}
             ><InfoIcon style={{ fontSize: "2.5rem", margin: "1rem" }}
               />Watch Trailer</Button>
-     <Button id="showbtn" onClick={() => setShow(!show)}>{show ? "Hide" :"Show"} Overview</Button>
+          <Button id="showbtn" onClick={() => setShow(!show)}>{show ? "Hide" :"Show"} Overview</Button>
 </div>
 
      {show ? <div className="summary">
@@ -69,8 +73,12 @@ export function Movie({ name, pic, rating, overview, runtime, genre, director, y
             {deleteButton}
             </CardActions>
         </div>
-      </Card>
-    </div>
+      </CardContent>
+   </Card>
+      </div>
+
+
+
 
   );
 }

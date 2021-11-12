@@ -30,7 +30,7 @@ const btnstyles={margin:"2rem",fontSize:"1.5rem"}
   return (
 
     <div className="addMovie-Form">
-      <h1 className="TITLE"><AddToDriveIcon style={{fontSize:"4rem"}}/> Add-Movies</h1>
+      <h1 className="TITLE"><AddToDriveIcon style={{fontSize:"4rem"}}/> Add Movies</h1>
       <TextField inputProps={styles}   InputLabelProps={styles} variant="standard" value={name} onChange={(event) => setName(event.target.value)} label="Name" />
       <TextField inputProps={styles}   InputLabelProps={styles} variant="standard" value={poster} onChange={(event) => setPoster(event.target.value)} label="Poster" />
       <TextField inputProps={styles}   InputLabelProps={styles} variant="standard" value={rating} onChange={(event) => setRating(event.target.value)} label="Rating" />
