@@ -9,6 +9,8 @@ import { useHistory } from 'react-router-dom';
 import { EditMovie } from './EditMovie';
 import IconButton from '@mui/material/IconButton';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 
 export default function App() {
   const Initial_Movies = [{
@@ -88,20 +90,20 @@ export default function App() {
   const history = useHistory();
   return (
     <div className="App">
-
-      <nav>
-  <div className="Back">
-          <IconButton style={{ marginRight: "auto"}} size="small" color="secondary" onClick={() => history.goBack()}
-            variant="contained"><KeyboardBackspaceIcon style={{fontSize: "3rem" }} /></IconButton>
-        </div>
-        <Link className="link" to="/">Home</Link>
-        <Link className="link" to="/movies">Movies</Link>
-        <Link className="link" to="/add-movies">Add Movies</Link>
-      </nav>
-
-      <div className="Mode">
-        <Button style={{ margin: "2rem", fontSize: "1.5rem" }} variant="outlined">Dark Mode</Button>
-        <Button style={{ margin: "2rem", fontSize: "1.5rem" }} variant="outlined">Light Mode</Button>
+      <nav className="navbar">
+        <AppBar position="static" style={{marginBottom:"2.4rem"}}>
+          <Toolbar style={{flexWrap:"wrap"}}>
+            <Button variant="text" style={{ color:"white",fontSize: "1.5rem" }} onClick={()=>history.push("/")} >Home</Button>
+            <Button  variant="text" style={{color:"inherit",fontSize:"1.5rem"}} onClick={()=>history.push("/movies")}>Movies</Button>
+            <Button  variant="text" style={{ color: "inherit", fontSize: "1.5rem" }} onClick={() => history.push("/add-movies")}>Add Movie</Button>
+            <Button  variant="text" style={{color:"inherit",fontSize:"1.5rem"}} onClick={()=>history.push("/tic-tac-toe")}>Tic-Tac-Toe Game</Button>
+            <Button style={{ margin: "2rem", fontSize: "1.5rem",color:"inherit",marginLeft:"auto" }} variant="text">Dark Mode</Button>
+          </Toolbar>
+        </AppBar>
+</nav>
+ <div className="Back">
+        <IconButton style={{ marginRight: "auto" }} size="small" color="secondary" onClick={() => history.goBack()}
+          variant="contained"><KeyboardBackspaceIcon style={{ fontSize: "3rem" }} /></IconButton>
       </div>
 
       <Switch>
@@ -122,6 +124,9 @@ export default function App() {
         </Route>
         <Route path="/add-movies">
           <AddMovie movies={movies} setMovie={setMovie} />
+        </Route>
+         <Route path="/tic-tac-toe">
+          <TicTacToe/>
         </Route>
         <Route path="**">
           <NotFound />
@@ -154,3 +159,19 @@ function NotFound() {
   )
 }
 
+function TicTacToe() {
+return (
+  <div>
+    <Gamebox />
+    <Gamebox />
+  </div>
+)
+}
+
+function Gamebox() {
+const [value, setValue] = useState(null);
+  return (<div className="box" onClick={() =>
+    setValue(value === "X" ? "0" : "X")}>{value}</div>
+  )
+
+}

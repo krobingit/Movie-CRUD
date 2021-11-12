@@ -147,28 +147,27 @@ border:1px solid;
 font-size:2.5rem;
 margin-right:2rem;
 }
-nav{
-display: flex;
-}
-nav>*{
-margin:1rem;
-}
+
 .addMovie-Form,.editMovie-Form{
 display: flex;
 flex-direction: column;
 width:70%;
 margin:2rem;
 }
+
 .link{
 color:purple;
 text-decoration: none;
-background-color: #f1f1f1;
 border-radius:1rem;
 padding:0.5rem;
 font-weight: bold;
 height:auto;
 display: flex;
+flex-direction: row;
+font-size:2rem;
+font-family: 'Manuale', serif;
 }
+
 .link:hover{
 color:orangered;
 }
@@ -201,15 +200,14 @@ border-radius: 1rem;
 .sum{
 margin:0 5rem;
 }
-.Mode{
-display: flex;
-margin-left: auto;
-}
 .Back{
 display: flex;
 }
+.navbar{
+width:100%;
+}
 
-/*Media Query*/
+/*Media Queries*/
 @media(min-width:800px)
 {
 .movie-title{

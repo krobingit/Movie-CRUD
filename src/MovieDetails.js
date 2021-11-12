@@ -4,7 +4,6 @@ export function MovieDetails({ movies }) {
  const { id } = useParams();
 
  const movie = movies[id];
- console.log(movie)
  return (
   <div class="movie-detail">
    <h1 style={{ fontSize:"3rem", color: "orangered" }}>{movie.name}</h1>
