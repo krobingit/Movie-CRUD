@@ -16,7 +16,7 @@ export function Movie({ name, pic, rating, overview, runtime, genre, director, y
  }
 
   const cardActionStyle = {justifyContent:"space-evenly"}
- const [show, setShow] = useState(true);
+ const [show, setShow] = useState(false);
   const history = useHistory();
   return (
     <div className="movie-container">

@@ -90,7 +90,7 @@ letter-spacing: 3px;
 
 .sub-heading{
 font-size:2.2rem;
-color:rgb(6, 32, 87);
+color:orangered;
 font-weight: bold;
 
 }
@@ -188,6 +188,33 @@ display:flex;
 flex-wrap: wrap;
 align-content: center;
 justify-content: center;
+}
+.gamebox{
+background-color: white;
+width:10rem;
+height:10rem;
+color:black;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size:8rem;
+border:1px solid black;
+}
+.board{
+
+display: flex;
+width:min-content;
+justify-content: center;
+margin-top:2rem;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+/*OR
+grid-template-columns:1fr 1fr 1fr*/
+}
+.winner{
+font-size:3.5rem;
+
 }
 /*Media Queries*/
 @media(min-width:800px)
