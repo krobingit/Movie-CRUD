@@ -245,7 +245,7 @@ font-size:4rem;
 font-weight: bold;
 }
 table,td{
-border:2px double black;
+border:2px solid black;
 border-collapse: collapse;
 }
 .winner{
