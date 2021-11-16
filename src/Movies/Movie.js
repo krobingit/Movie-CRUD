@@ -1,4 +1,4 @@
-import { Counter } from "./Counter";
+import { Counter } from './Counter';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom";

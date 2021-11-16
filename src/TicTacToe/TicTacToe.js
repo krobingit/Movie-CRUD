@@ -2,7 +2,10 @@ import { useState } from 'react';
 import React from 'react'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import Button from '@mui/material/Button';
 export function TicTacToe() {
+
+
  const [board, setBoard] = useState([null, null, null,
   null, null, null, null, null, null]);
 
@@ -25,8 +28,14 @@ export function TicTacToe() {
   return null;
  };
  //Declaring winner variable
- const winner = decideWinner(board);
 
+  var winner = decideWinner(board);
+  /*
+  const [winningText, setWinningText] = useState("");
+
+  if (winner)
+    setWinningText(winner+"WON!!! 🏆")
+*/
  const [isXTurn, setIsXTurn] = useState(true);
 
  const handleClick = (id) => {
@@ -44,19 +53,27 @@ export function TicTacToe() {
   );
  }
 
- const { width, height } = useWindowSize();
+  const { width, height } = useWindowSize();
+
+  function reset() {
+    setBoard([null, null, null, null, null, null, null, null, null]);
+    winner = null;
+  }
+
+
  return (
-  <div class="full-game">
+   <form className="full-game">
    {winner ? <Confetti
     width={width}
     height={height} gravity={0.05}
    /> : ""}
    <div className="board">
-    {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
+       {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
+       <Button variant="outlined" style={{ marginTop: "1rem" }} onClick={reset} >Restart</Button>
    </div>
-   {winner ? <h2 className="winner"
-    style={{ color: winner === "X" ? "green" : "red" }}>🏆 WINNER IS: {winner}</h2> : ""}
-  </div>
+     {winner ? <div className="winner"
+       style={{ color: winner === "X" ? "green" : "red" }}>🏆 Player {winner} WON!!!</div> : ""}
+  </form>
 
  );
 }

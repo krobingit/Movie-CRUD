@@ -15,8 +15,8 @@ export function EditMovie() {
       {
         method: "GET"
       }).then((data) => data.json()).then((mv)=>setMovie(mv));
-  }
-//USE EFFECT HOOK
+     }
+ //USE EFFECT HOOK
   useEffect(getMovie, [id]);
 
     const [name, setName] = useState("");
@@ -40,8 +40,8 @@ export function EditMovie() {
     setYor(movie.yor)
     setCast(movie.cast)
     setTrailer(movie.trailer)
- }, [movie])
-/*name, poster, rating, runtime, genre, overview, director, yor, cast, trailer*/
+  }, [movie])
+
    const editMovie = () => {
     const updatedMovie = {
       name, poster, rating, runtime, genre, overview, director, yor, cast,trailer
@@ -80,10 +80,4 @@ export function EditMovie() {
   </div>
 
   );
-
-
-
-
-
-
 }

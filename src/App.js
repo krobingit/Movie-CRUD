@@ -1,12 +1,12 @@
 import './App.css';
-import { MovieList } from './MovieList';
+import { MovieList } from './Movies/MovieList';
 import { useState } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
-import { AddMovie } from './AddMovie';
-import { MovieDetails } from './MovieDetails';
+import { AddMovie } from './Movies/AddMovie';
+import { MovieDetails } from './Movies/MovieDetails';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
-import { EditMovie } from './EditMovie';
+import { EditMovie } from './Movies/EditMovie';
 import IconButton from '@mui/material/IconButton';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import AppBar from '@mui/material/AppBar';
@@ -15,7 +15,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Paper from '@mui/material/Paper';
-import { TicTacToe } from './TicTacToe';
+import { TicTacToe } from './TicTacToe/TicTacToe';
+import { BasicForm } from './BasicForm';
 
 export default function App() {
 
@@ -39,6 +40,7 @@ export default function App() {
                 <Button variant="text" style={styles} onClick={() => history.push("/movies")}>Movies</Button>
                 <Button variant="text" style={styles} onClick={() => history.push("/add-movies")}>Add Movie</Button>
                 <Button variant="text" style={styles} onClick={() => history.push("/tic-tac-toe")}>Tic-Tac-Toe Game</Button>
+                <Button variant="text" style={styles} onClick={() => history.push("/basic-form")}>Basic Form</Button>
                 <Button startIcon={Theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />} onClick={() => setMode(mode === "dark" ? "light" : "dark")} style={{ margin: "2rem", fontSize: "1.5rem", color: "inherit", marginLeft: "auto" }}
                   variant="text">{mode === "dark" ? "Light" : "Dark"} Mode</Button>
               </Toolbar>
@@ -69,6 +71,9 @@ export default function App() {
             </Route>
             <Route path="/tic-tac-toe">
               <TicTacToe />
+            </Route>
+            <Route path="/basic-form">
+              <BasicForm />
             </Route>
             <Route path="**">
               <NotFound />

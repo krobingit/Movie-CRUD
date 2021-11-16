@@ -214,7 +214,6 @@ grid-template-columns:1fr 1fr 1fr*/
 }
 .winner{
 font-size:3.5rem;
-
 }
 /*Media Queries*/
 @media(min-width:800px)
