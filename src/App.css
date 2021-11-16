@@ -224,15 +224,14 @@ min-width: 100vw;
 background-image: url("https://wallpaperaccess.com/full/2078959.jpg");
 background-size: cover;
 background-position: bottom;
-
 }
 .LeaderBoard{
 display: flex;
 flex-direction: column;
 align-items: center;
-background: rgba( 144, 19, 254, 0.25 );
+background: purple;
+opacity: 0.9;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-border: 1px solid rgba( 255, 255, 255, 0.18 );
 border-radius: 2rem;
 padding:2.5rem;
 margin: 1.5rem 0;
