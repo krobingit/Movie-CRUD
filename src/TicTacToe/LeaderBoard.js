@@ -18,15 +18,19 @@ export function LeaderBoard({XPoints,OPoints}) {
     <div className="LeaderBoard">
       <h2 className="leadertext"><LeaderboardIcon style={{ fontSize: "3rem", marginRight: "1rem" }} />LeaderBoard</h2>
       <div>
-        <table>
+     <table>
+      <thead>
           <tr>
             <td style={{ color: "green" }}>X</td>
             <td style={{ color: "red" }}>O</td>
           </tr>
+      </thead>
+      <tfoot>
           <tr>
        <td style={{ color: "green" }}>{XPoints}</td>
        <td style={{ color: "red" }}>{OPoints}</td>
           </tr>
+</tfoot>
         </table>
       </div>
     </div>
