@@ -88,19 +88,18 @@ export function TicTacToe() {
         width={width}
         height={height} gravity={0.05}
       /> : ""}
-
-      <div className="PlayArea">
         <div className="board">
           {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
         </div>
         {winner ? <div className="winner"
         style={{
-          color: winner === "X" ? "green" : "red", margin: "2rem", display: "flex", justifyContent: "center"
+          color: winner === "X" ? "green" : "red", margin: "2rem 0 0 0", display: "flex", justifyContent: "center"
         }}>🏆 Player {winner} WON!!!</div> : ""}
-        <h2>{isXTurn ? "Its X Turn now" : "Its O Turn now"}</h2>
+      <h2 style={{color:"crimson"}}>{isXTurn ? "Its X Turn now" : "Its O Turn now"}</h2>
+      <div className="btns">
         <Button size="small" variant="contained" color="secondary" style={{ fontSize: "1.3rem" }} onClick={() => setIsXTurn(true)} >Start with X</Button>
-         <Button size="small" variant="contained" color="secondary" style={{marginLeft:"0.4rem",fontSize: "1.3rem" }} onClick={()=>setIsXTurn(false)} >Start with 0</Button>
-      </div>
+        <Button size="small" variant="contained" color="secondary" style={{ marginLeft: "0.8rem", fontSize: "1.3rem" }} onClick={() => setIsXTurn(false)} >Start with 0</Button>
+        </div>
 
       <div className="Reset">
         <Button size="large" variant="contained" color="secondary" style={{ marginTop: "1rem", fontSize: "1.3rem" }} onClick={reset} >Restart Game</Button>

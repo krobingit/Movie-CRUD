@@ -211,6 +211,7 @@ grid-template-columns:1fr 1fr 1fr*/
 }
 .Reset{
 display: flex;
+align-items: center;
 justify-content: center;
 margin-top: 2rem;
 }
@@ -257,6 +258,9 @@ font-variant: small-caps;
 letter-spacing: 3px;
 color: black;
 margin: 0;
+}
+.btns{
+display: flex;
 }
 /*Media Queries*/
 @media(min-width:800px)
