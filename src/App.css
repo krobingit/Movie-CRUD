@@ -202,15 +202,23 @@ font-size:8rem;
 border:1px solid black;
 }
 .board{
-
-display: flex;
 width:min-content;
-justify-content: center;
 margin-top:2rem;
 display: grid;
 grid-template-columns: repeat(3,1fr);
 /*OR
 grid-template-columns:1fr 1fr 1fr*/
+}
+.Reset{
+display: flex;
+justify-content: center;
+margin-top: 2rem;
+}
+.full-game{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 .winner{
 font-size:3.5rem;
