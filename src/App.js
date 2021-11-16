@@ -22,7 +22,7 @@ export default function App() {
 
 
   const history = useHistory();
-  const [mode, setMode] = useState("dark")
+  const [mode, setMode] = useState("dark");
   const Theme = createTheme({
     palette: {
       mode: mode,

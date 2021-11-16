@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import Button from '@mui/material/Button';
+import { LeaderBoard } from './LeaderBoard';
+
 export function TicTacToe() {
 
 
@@ -28,14 +30,7 @@ export function TicTacToe() {
     return null;
   };
   //Declaring winner variable
-
   var winner = decideWinner(board);
-  /*
-  const [winningText, setWinningText] = useState("");
-
-  if (winner)
-    setWinningText(winner+"WON!!! 🏆")
-*/
   const [isXTurn, setIsXTurn] = useState(true);
 
   const handleClick = (id) => {
@@ -55,27 +50,62 @@ export function TicTacToe() {
 
   const { width, height } = useWindowSize();
 
-  function reset() {
-    setBoard([null, null, null, null, null, null, null, null, null]);
-    winner = null;
-  }
+  const [XPoints, setXPoints] = useState(0);
+  const [OPoints, setOPoints] = useState(0);
+  //const id = 100;
+  useEffect(() => {
+    if (winner === "X") {
+      setXPoints(XPoints + 1)
+    }
+    if (winner === "O") {
+      setOPoints(OPoints + 1)
+    }
+  }, [winner])
+    /*
+      const pointsObject = {
+        id:"100",
+         XPoints,
+          OPoints
+        }
+      useEffect(() => {
+        fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/points/${id}`, {
+          method: "PUT",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(pointsObject)
+        })
+      }, [XPoints,OPoints])
+    */
 
-
+    function reset() {
+      setBoard([null, null, null, null, null, null, null, null, null]);
+      winner = null;
+    }
+  const [check, setCheck] = useState(false);
   return (
+
     <div className="full-game">
       {winner ? <Confetti
         width={width}
         height={height} gravity={0.05}
       /> : ""}
-      <div className="board">
-        {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
+
+      <div className="PlayArea">
+        <div className="board">
+          {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
+        </div>
+        <h2>{isXTurn ? "Its X Turn now" : "Its O Turn now"}</h2>
+        <Button size="small" variant="contained" color="secondary" style={{ fontSize: "1.3rem" }} onClick={() => setIsXTurn(true)} >Start with X</Button>
+         <Button size="small" variant="contained" color="secondary" style={{marginLeft:"0.4rem",fontSize: "1.3rem" }} onClick={()=>setIsXTurn(false)} >Start with 0</Button>
       </div>
+
       <div className="Reset">
-        <Button size="large" variant="contained" color="secondary" style={{ marginTop: "1rem",fontSize:"1.3rem" }} onClick={reset} >Restart</Button>
+        <Button size="large" variant="contained" color="secondary" style={{ marginTop: "1rem", fontSize: "1.3rem" }} onClick={reset} >Restart Game</Button>
       </div>
+      <Button onClick={() => setCheck(!check)} size="large" variant="contained" color="secondary" style={{ margin: "1.5rem 0", fontSize: "1.3rem" }} >{check ? "Hide" : "Check"} LeaderBoard</Button>
+      {check ? <LeaderBoard XPoints={XPoints} OPoints={OPoints} /> : ''}
       {winner ? <div className="winner"
         style={{
-          color: winner === "X" ? "green" : "red", margin: "2rem", display: "flex", justifyContent:"center"
+          color: winner === "X" ? "green" : "red", margin: "2rem", display: "flex", justifyContent: "center"
         }}>🏆 Player {winner} WON!!!</div> : ""}
     </div>
 

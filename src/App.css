@@ -190,7 +190,7 @@ align-content: center;
 justify-content: center;
 }
 .gamebox{
-background-color: white;
+background-color: darkgray;
 width:10rem;
 height:10rem;
 color:black;
@@ -219,9 +219,45 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+min-height: 100vh;
+min-width: 100vw;
+background-image: url("https://wallpaperaccess.com/full/2078959.jpg");
+background-size: cover;
+background-position: bottom;
+
+}
+.LeaderBoard{
+display: flex;
+flex-direction: column;
+align-items: center;
+background: rgba( 144, 19, 254, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+border-radius: 2rem;
+padding:2.5rem;
+margin: 1.5rem 0;
+}
+
+td{
+margin:1rem;
+width:6rem;
+padding:2rem;
+font-size:4rem;
+font-weight: bold;
+}
+table,td{
+border:2px double black;
+border-collapse: collapse;
 }
 .winner{
 font-size:3.5rem;
+}
+.leadertext{
+font-size:4rem;
+font-variant: small-caps;
+letter-spacing: 3px;
+color: black;
+margin: 0;
 }
 /*Media Queries*/
 @media(min-width:800px)
