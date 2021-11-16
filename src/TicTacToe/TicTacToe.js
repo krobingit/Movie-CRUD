@@ -55,10 +55,10 @@ export function TicTacToe() {
   //const id = 100;
   useEffect(() => {
     if (winner === "X") {
-      setXPoints(XPoints + 1)
+      setXPoints((XPoints)=>XPoints + 1)
     }
     if (winner === "O") {
-      setOPoints(OPoints + 1)
+      setOPoints((OPoints)=>OPoints + 1)
     }
   }, [winner])
     /*
