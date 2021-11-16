@@ -93,6 +93,10 @@ export function TicTacToe() {
         <div className="board">
           {board.map((val, index) => <Box val={val} onPlayerClick={() => handleClick(index)} />)}
         </div>
+        {winner ? <div className="winner"
+        style={{
+          color: winner === "X" ? "green" : "red", margin: "2rem", display: "flex", justifyContent: "center"
+        }}>🏆 Player {winner} WON!!!</div> : ""}
         <h2>{isXTurn ? "Its X Turn now" : "Its O Turn now"}</h2>
         <Button size="small" variant="contained" color="secondary" style={{ fontSize: "1.3rem" }} onClick={() => setIsXTurn(true)} >Start with X</Button>
          <Button size="small" variant="contained" color="secondary" style={{marginLeft:"0.4rem",fontSize: "1.3rem" }} onClick={()=>setIsXTurn(false)} >Start with 0</Button>
@@ -103,10 +107,7 @@ export function TicTacToe() {
       </div>
       <Button onClick={() => setCheck(!check)} size="large" variant="contained" color="secondary" style={{ margin: "1.5rem 0", fontSize: "1.3rem" }} >{check ? "Hide" : "Check"} LeaderBoard</Button>
       {check ? <LeaderBoard XPoints={XPoints} OPoints={OPoints} /> : ''}
-      {winner ? <div className="winner"
-        style={{
-          color: winner === "X" ? "green" : "red", margin: "2rem", display: "flex", justifyContent: "center"
-        }}>🏆 Player {winner} WON!!!</div> : ""}
+
     </div>
 
   );
