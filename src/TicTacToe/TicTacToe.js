@@ -6,8 +6,6 @@ import Button from '@mui/material/Button';
 import { LeaderBoard } from './LeaderBoard';
 
 export function TicTacToe() {
-
-
   const [board, setBoard] = useState([null, null, null,
     null, null, null, null, null, null]);
 
@@ -61,20 +59,6 @@ export function TicTacToe() {
       setOPoints((OPoints)=>OPoints + 1)
     }
   }, [winner])
-    /*
-      const pointsObject = {
-        id:"100",
-         XPoints,
-          OPoints
-        }
-      useEffect(() => {
-        fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/points/${id}`, {
-          method: "PUT",
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(pointsObject)
-        })
-      }, [XPoints,OPoints])
-    */
 
     function reset() {
       setBoard([null, null, null, null, null, null, null, null, null]);
@@ -111,3 +95,4 @@ export function TicTacToe() {
 
   );
 }
+
