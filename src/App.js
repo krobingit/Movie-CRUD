@@ -52,7 +52,7 @@ export default function App() {
 
           <Switch>
             <Route exact path="/">
-              <h1 className="heading"><Home /></h1>
+             <Home />
             </Route>
             <Route path="/films">
               <Redirect to="/movies" />

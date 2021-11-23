@@ -87,7 +87,7 @@ function UpdateMovie({movie})
         <TextField FormHelperTextProps={helperTextStyle} inputProps={styles} InputLabelProps={styles} error={errors.yor && touched.yor} helperText={errors.yor && touched.yor && errors.yor} variant="standard" value={values.yor} id="yor" name="yor" onBlur={handleBlur} onChange={handleChange} label="Year of release" />
         <TextField FormHelperTextProps={helperTextStyle} inputProps={styles} InputLabelProps={styles} error={errors.cast && touched.cast} helperText={errors.cast && touched.cast && errors.cast} variant="standard" value={values.cast} id="cast" name="cast" onBlur={handleBlur} onChange={handleChange} label="Cast" />
         <TextField FormHelperTextProps={helperTextStyle} inputProps={styles} InputLabelProps={styles} error={errors.trailer && touched.trailer} helperText={errors.trailer && touched.trailer && errors.trailer} variant="standard" value={values.trailer} id="trailer" name="trailer" onBlur={handleBlur} onChange={handleChange} label="Trailer URL(Embed)" />
-        <Button style={btnstyles} type="submit" variant="contained">Update Movie</Button>
+        <Button style={btnstyles} type="submit" color="success" variant="contained">Update Movie</Button>
       </form>
 
     );
