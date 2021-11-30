@@ -10,7 +10,7 @@ export function MovieList() {
   const [movies, setMovies] = useState([]);
 //USE EFFECT HOOK
   const getMovies = () => {
-    fetch("https://6166c4da13aa1d00170a66f9.mockapi.io/movies", {
+    fetch("https://movies-api-use.herokuapp.com/movies", {
     method:"GET"})
         .then((data) => data.json())
         .then((mvs) => setMovies(mvs))
@@ -18,7 +18,7 @@ export function MovieList() {
   useEffect(getMovies, []);
 
   const deleteMovie = (id) => {
-    fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${id}`, {
+    fetch(`https://movies-api-use.herokuapp.com/movies/${id}`, {
       method: "DELETE"
     }).then(() => getMovies());
 
