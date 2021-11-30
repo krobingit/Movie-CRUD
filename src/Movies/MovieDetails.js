@@ -6,7 +6,7 @@ export function MovieDetails() {
 
    const [movie, setMovie] = useState({})
    useEffect(() => {
-      fetch(`https://movies-api-use.herokuapp.com/movies/${id}`)
+      fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${id}`)
          .then(data => data.json())
          .then(mv => setMovie(mv))
    },[id])

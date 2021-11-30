@@ -52,7 +52,7 @@ function UpdateMovie({movie})
          name, poster, rating, runtime, genre, overview, director, yor, cast,trailer
        };*/
 
-      fetch(`https://movies-api-use.herokuapp.com/movies/${movie.id}`,
+      fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${movie.id}`,
         {
           method: "PUT",
           headers: { 'Content-Type': 'application/json' },

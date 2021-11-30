@@ -50,7 +50,7 @@ genre:"",overview:"", director:"",yor:"",cast:"",trailer:""},
     };*/
     /*  setMovie([...movies, newMovie]);
      ;*/
-  fetch(`https://movies-api-use.herokuapp.com/movies`,
+  fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies`,
     {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
