@@ -34,16 +34,16 @@ export function MovieList() {
     <section className="Movie-list">
       <h1 className="TITLE"><MovieIcon style={{ fontSize: "3.5rem" }} /> Movies</h1>
       <div className="mov">
-        {movies.map(({ name, poster, rating, overview, runtime, genre, director, yor, cast,id }, index) =>
+        {movies.map(({ name, poster, rating, overview, runtime, genre, director, yor, cast,id,_id }, index) =>
 
           <Movie name={name} pic={poster} rating={rating} overview={overview}
-            runtime={runtime} genre={genre} director={director} yor={yor} cast={cast} key={index} id={id}
+            runtime={runtime} genre={genre} director={director} yor={yor} cast={cast} key={_id} id={_id}
 
-            editButton={<IconButton color="primary" onClick={() => { history.push("/movies/edit/"+id) }} >
+            editButton={<IconButton color="primary" onClick={() => { history.push("/movies/edit/"+_id) }} >
               <EditIcon style={styles} /></IconButton>}
 
             deleteButton={<IconButton onClick={() =>
-            deleteMovie(id)
+            deleteMovie(_id)
              /* const undeleted = movies.filter((mv, idx) => idx !== index);
               setMovie(undeleted);*/
             } color="error"><DeleteIcon style={styles}
