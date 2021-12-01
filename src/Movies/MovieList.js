@@ -34,7 +34,7 @@ export function MovieList() {
     <section className="Movie-list">
       <h1 className="TITLE"><MovieIcon style={{ fontSize: "3.5rem" }} /> Movies</h1>
       <div className="mov">
-        {movies.map(({ name, poster, rating, overview, runtime, genre, director, yor, cast,id,_id }, index) =>
+        {movies.map(({ name, poster, rating, overview, runtime, genre, director, yor, cast,_id }, index) =>
 
           <Movie name={name} pic={poster} rating={rating} overview={overview}
             runtime={runtime} genre={genre} director={director} yor={yor} cast={cast} key={_id} id={_id}
