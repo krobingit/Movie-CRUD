@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import MovieIcon from '@mui/icons-material/Movie';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState,useEffect} from 'react';
-import API_URL from "./Global_constant"
+import {API_URL} from "./Global_constant"
 export function MovieList() {
   const [movies, setMovies] = useState([]);
 
