@@ -5,7 +5,7 @@ import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useFormik } from "formik";
 import * as yup from 'yup';
-import { API_URL } from '../App';
+import { API_URL } from './Global_constant';
 
 
 export const formValidationSchema = ()=> yup.object({

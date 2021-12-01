@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useFormik } from "formik";
 import {formValidationSchema} from './AddMovie'
-import { API_URL } from '../App';
+import { API_URL } from './Global_constant';
 export function EditMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null)

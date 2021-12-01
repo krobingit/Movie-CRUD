@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { API_URL } from "../App";
+import { API_URL } from "./Global_constant";
 
 export function MovieDetails() {
  const { id } = useParams();
