@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { API_URL } from "../App";
 
 export function MovieDetails() {
  const { id } = useParams();
 
    const [movie, setMovie] = useState({})
    useEffect(() => {
-      fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${id}`)
+      fetch(`${API_URL}/movies/${id}`)
          .then(data => data.json())
          .then(mv => setMovie(mv))
    },[id])

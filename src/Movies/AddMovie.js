@@ -5,6 +5,7 @@ import AddToDriveIcon from '@mui/icons-material/AddToDrive';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useFormik } from "formik";
 import * as yup from 'yup';
+import { API_URL } from '../App';
 
 
 export const formValidationSchema = ()=> yup.object({
@@ -50,7 +51,7 @@ genre:"",overview:"", director:"",yor:"",cast:"",trailer:""},
     };*/
     /*  setMovie([...movies, newMovie]);
      ;*/
-  fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies`,
+  fetch(`${API_URL}/movies`,
     {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },

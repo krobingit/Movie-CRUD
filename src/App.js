@@ -17,9 +17,8 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Paper from '@mui/material/Paper';
 import { TicTacToe } from './TicTacToe/TicTacToe';
 import { BasicForm } from './BasicForm';
-
+  export const API_URL = 'https://movies-api-use.herokuapp.com';
 export default function App() {
-
 
   const history = useHistory();
   const [mode, setMode] = useState("dark");

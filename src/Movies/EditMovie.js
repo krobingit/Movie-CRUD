@@ -6,12 +6,13 @@ import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useFormik } from "formik";
 import {formValidationSchema} from './AddMovie'
+import { API_URL } from '../App';
 export function EditMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null)
 
   const getMovie = () => {
-    fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${id}`,
+    fetch(`${API_URL}/movies/${id}`,
       {
         method: "GET"
       }).then((data) => data.json()).then((mv) => setMovie(mv));
@@ -52,7 +53,7 @@ function UpdateMovie({movie})
          name, poster, rating, runtime, genre, overview, director, yor, cast,trailer
        };*/
 
-      fetch(`https://6166c4da13aa1d00170a66f9.mockapi.io/movies/${movie.id}`,
+      fetch(`${API_URL}/movies/${movie.id}`,
         {
           method: "PUT",
           headers: { 'Content-Type': 'application/json' },
