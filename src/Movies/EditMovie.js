@@ -23,17 +23,6 @@ export function EditMovie() {
  return  movie ? <UpdateMovie movie={movie} /> : "";
 }
 
-    /*
-    const [name, setName] = useState(movie.name);
-    const [poster, setPoster] = useState(movie.poster);
-    const [rating, setRating] = useState(movie.rating);
-    const [runtime, setRuntime] = useState(movie.runtime);
-    const [genre, setGenre] = useState(movie.genre);
-    const [overview, setOverview] = useState(movie.overview);
-    const [director, setDirector] = useState(movie.director);
-    const [yor, setYor] = useState(movie.yor);
-    const [cast, setCast] = useState(movie.cast);
-  const [trailer, setTrailer] = useState(movie.trailer);*/
 function UpdateMovie({movie})
 {
     const { handleSubmit, values, handleChange, handleBlur, errors, touched } = useFormik({
@@ -53,7 +42,7 @@ function UpdateMovie({movie})
          name, poster, rating, runtime, genre, overview, director, yor, cast,trailer
        };*/
 
-      fetch(`${API_URL}/movies/${movie.id}`,
+      fetch(`${API_URL}/movies/${movie._id}`,
         {
           method: "PUT",
           headers: { 'Content-Type': 'application/json' },
